@@ -1,11 +1,16 @@
-// RoboTreinado.cpp : Defines the entry point for the console application.
-//
-
 #include "stdafx.h"
+#include <QtWidgets\qapplication.h>
+
+#include "IU.h"
 
 
-int main()
+int main(int argc, char *argv[])
 {
-    return 0;
-}
+	IU treinador;
 
+	QApplication treinamento(argc, argv);
+
+
+	return treinamento.exec();
+
+}
