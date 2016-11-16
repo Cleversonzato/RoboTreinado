@@ -12,19 +12,24 @@
 
 /*classe de interface do usuário */
 
-class IU
+class IU : public QWidget
 {
-	//Q_OBJECT
+	Q_OBJECT
 public:
 	IU();
 	~IU();
 		
 private:
-	QWidget *janela; //janela de IU principal/mãe
+	QWidget* janela; //janela de IU principal/mãe
+	QWidget* menu; //janela de menu
+	QRadioButton *selecaoInicial1;
+	QRadioButton *selecaoInicial2;
 
 	void menuInicial();
-
-signals:
-public slots:
+	void menuTreinar();
+	void menuAvaliar();
+	
+private slots:
+	void slotProximo();
 
 };

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "IU.h"
 #include "moc_IU.cpp"
+#include <iostream>
 
 
 IU::IU():
@@ -18,17 +19,17 @@ IU::~IU()
 void IU::menuInicial()
 {
 	//inicializanção dos widgets 	
-	QWidget *menu = new QWidget(IU::janela);
+	menu = new QWidget(janela);
 	menu->setMinimumSize(500, 400);
-	QRadioButton *selecaoInicial1 = new QRadioButton("Treinar o identificador");
+	selecaoInicial1 = new QRadioButton("Treinar o identificador");
 	selecaoInicial1->setMaximumSize(200, 30);
-	QRadioButton *selecaoInicial2 = new QRadioButton("Avaliar o identificador");
+	selecaoInicial2 = new QRadioButton("Avaliar o identificador");
 	selecaoInicial2->setMaximumSize(200, 30);
 	QPushButton *continuar = new QPushButton("Continuar");
 	continuar->setMaximumSize(150, 30);
 	QPushButton *sair = new QPushButton("Sair");
-	continuar->setMaximumSize(150, 30);
-	QString local = "C:/Users/cleve/Documents/Visual Studio 2015/RoboTreinado/RoboTreinado/brain.png";
+	sair->setMaximumSize(150, 30);
+	QString local = "./brain.png";
 	QPixmap *imagem = new QPixmap(local);
 	QLabel *moldura = new QLabel();
 	moldura->setPixmap(*imagem);
@@ -48,6 +49,35 @@ void IU::menuInicial()
 	organizaBotao->addWidget(sair);
 
 	/*Parte lógica dos botões*/
-	QObject::connect(sair, SIGNAL(clicked()), QApplication::instance(), SLOT(quit()));
+	QObject::connect(sair, SIGNAL(released()), QApplication::instance(), SLOT(quit()));
+	QObject::connect(continuar, &QPushButton::released, this, &IU::slotProximo);
+	
+}
 
+void IU::slotProximo()
+{
+	if (selecaoInicial1->isChecked()) {
+		menu->close();
+		menuTreinar();
+	}
+	else if (selecaoInicial2->isChecked()) {
+		menu->close();
+		menuAvaliar();
+	}
+}
+
+void IU::menuTreinar()
+{
+	QWidget *menuTreinar = new QWidget(IU::janela);
+	menu->setMinimumSize(500, 400);
+	QPushButton *voltar = new QPushButton("Sair", menuTreinar);
+	voltar->setMaximumSize(150, 30);
+}
+
+void IU::menuAvaliar()
+{
+	QWidget *menuAvaliar = new QWidget(IU::janela);
+	menu->setMinimumSize(500, 400);
+	QPushButton *voltar = new QPushButton("Sair", menuAvaliar);
+	voltar->setMaximumSize(150, 30);
 }
