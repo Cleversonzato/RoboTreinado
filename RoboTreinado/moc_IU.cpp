@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_IU_t {
     QByteArrayData data[3];
-    char stringdata0[16];
+    char stringdata0[17];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,11 +30,11 @@ struct qt_meta_stringdata_IU_t {
 static const qt_meta_stringdata_IU_t qt_meta_stringdata_IU = {
     {
 QT_MOC_LITERAL(0, 0, 2), // "IU"
-QT_MOC_LITERAL(1, 3, 11), // "slotProximo"
-QT_MOC_LITERAL(2, 15, 0) // ""
+QT_MOC_LITERAL(1, 3, 12), // "slotMudaMenu"
+QT_MOC_LITERAL(2, 16, 0) // ""
 
     },
-    "IU\0slotProximo\0"
+    "IU\0slotMudaMenu\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,7 +66,7 @@ void IU::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_
         IU *_t = static_cast<IU *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->slotProximo(); break;
+        case 0: _t->slotMudaMenu(); break;
         default: ;
         }
     }
