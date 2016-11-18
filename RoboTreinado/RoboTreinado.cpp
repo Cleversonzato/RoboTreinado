@@ -13,11 +13,10 @@
 
 int main(int argc, char *argv[])
 {
-	std::cout << "1";
+	
 	QApplication treinamento(argc, argv);
 	IU treinador;
-	treinador.menuSelecionar();
-	std::cout << "2";
+	
 	return treinamento.exec();
-
+	
 }
