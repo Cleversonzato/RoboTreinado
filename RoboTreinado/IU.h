@@ -1,14 +1,12 @@
 #pragma once
-#include <QtCore\qobject.h>
-#include <QtGui\qpaintdevice.h>
+
 #include <QtWidgets\qapplication.h>
-#include <QtWidgets\qwidget.h>
 #include <QtWidgets\qradiobutton.h>
-#include <QtWidgets\qpushbutton.h>
 #include <QtWidgets\qboxlayout.h>
-#include <QtWidgets\qlabel.h>
 #include <QtWidgets\qlineedit.h>
 #include <QtWidgets\qfiledialog.h>
+#include <string>
+//#include <algorithm>
 
 
 //#include <QtCore\qcoreapplication.h>
@@ -19,35 +17,31 @@
 #include <QtGui\qpagedpaintdevice.h>
 #include <QtGui\qpaintdevicewindow.h>
 #include <QtGui\qpaintengine.h>
-#include <QtCore\qfile.h>*/
+#include <QtCore\qfile.h>
+#include <QtWidgets\qlabel.h>
+#include <QtGui\qpaintdevice.h>
+*/
 
 
-
-/*classe de interface do usuário */
+//classe de padronização do visual da interface do usuário
 
 class IU : public QWidget
 {
-	Q_OBJECT
+	
 public:
 	IU();
 	~IU();	
 		
-private:
-	QWidget* janela; //janela de IU principal/mãe
+protected:
+	
 	QWidget* menuAtual =0; //janela de menu
-	QRadioButton *selecaoInicial1 =0;
-	QRadioButton *selecaoInicial2 =0;
+	QRadioButton *selecao1 =0;
+	QRadioButton *selecao2 =0;
 	QVBoxLayout *centraliza;
 	QString *caminhoFotos;
+	QLineEdit *caminho;
 
-	void menuSelecionar();
-	void menuTreinar();
-	void menuAvaliar(); 
-	void cliqueMudaMenu(QPushButton*);
-	void cliqueSair(QPushButton*);
-
-private slots:
-	void slotMudaMenu();
-	void pegaPasta();
 
 };
+
+

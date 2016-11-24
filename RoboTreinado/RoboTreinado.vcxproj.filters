@@ -33,6 +33,12 @@
     <ClInclude Include="resource1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MenuInicial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IU.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -44,12 +50,18 @@
     <ClCompile Include="IU.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="moc_IU.cpp">
+    <ClCompile Include="Controlador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="moc_Controlador.cpp">
       <Filter>Header Files\Filtro</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuInicial.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="IU.h">
+    <CustomBuild Include="Controlador.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
