@@ -2,13 +2,13 @@
 #include "moc_Controlador.cpp"
 #include "Controlador.h"
 
-QVBoxLayout Controlador::*centraliza;
+QVBoxLayout Controlador::*dentroDaJanela;
 
 void Controlador::iniciaJanela() {
 	QWidget* janelaPrincipal = new QWidget; //note que não é necessário desalocar pois o QT faz isso implicitamente)
 	janelaPrincipal->setMinimumSize(400, 400);
-	QVBoxLayout *centraliza = new QVBoxLayout;
-	janelaPrincipal->setLayout(centraliza);
+	dentroDaJanela = new QVBoxLayout;
+	janelaPrincipal->setLayout(dentroDaJanela);
 	janelaPrincipal->show();
 }
 

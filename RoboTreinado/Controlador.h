@@ -13,9 +13,10 @@ public:
 	Controlador();
 	~Controlador();
 
-protected:
-	static QVBoxLayout Controlador::*centraliza; //layout da janela principal no qual serão colocados todos os menus
-	static QWidget* janelaPrincipal; //inicializador da janela principal
+	static QVBoxLayout *dentroDaJanela; //layout da janela principal no qual serão colocados todos os menus
+
+private:
+	static void iniciaJanela(); //inicializador da janela principal
 
 protected slots:	
 	

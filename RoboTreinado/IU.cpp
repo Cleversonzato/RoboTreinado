@@ -12,6 +12,16 @@ IU::~IU()
 {
 }
 
+//inicializador pincipal de um menu
+QWidget* IU::iniciaMenu()
+{
+	QWidget *menu = new QWidget;
+	naVertical(menu, Controlador::dentroDaJanela);
+
+	return menu;
+}
+
+//criador de QPushButtons
 QPushButton* IU::botao(QString nomeBotao)
 {
 	QPushButton *bot = new QPushButton(nomeBotao);
@@ -20,6 +30,7 @@ QPushButton* IU::botao(QString nomeBotao)
 	return bot;
 }
 
+//criador de QRadioButtons
 QRadioButton* IU::botaoSelecao(QString nomeBotao)
 {
 	QRadioButton* selecao = new QRadioButton(nomeBotao);
@@ -28,6 +39,7 @@ QRadioButton* IU::botaoSelecao(QString nomeBotao)
 	return selecao;
 }
 
+//criador de locais para imagens localizadas em "local"
 QLabel* IU::imagem(QString local) 
 {
 	QLabel* moldura = new QLabel;
@@ -39,6 +51,7 @@ QLabel* IU::imagem(QString local)
 	return moldura;
 }
 
+//criador de linhas de texto
 QLineEdit* IU::diretorio()
 {
 	QLineEdit *dir = new QLineEdit;	
@@ -47,11 +60,14 @@ QLineEdit* IU::diretorio()
 	return dir;
 }
 
+//insere Widgets em um layout horizontal e centraliza
 QHBoxLayout IU::naHorizontal(QWidget* torto, QHBoxLayout* alinhamento)
 {
 	alinhamento->addWidget(torto);
 	alinhamento->setAlignment(torto, Qt::AlignHCenter);
 }
+
+//insere Widgets em um layout vertical e centraliza
 QVBoxLayout IU::naVertical(QWidget* torto, QVBoxLayout* alinhamento)
 {
 	alinhamento->addWidget(torto);
@@ -127,9 +143,11 @@ void IU::menuTreinar()
 	//layout
 	IU::centraliza->addWidget(menuTreinar);
 	IU::centraliza->setAlignment(menuTreinar, Qt::AlignHCenter);
+
 	QVBoxLayout *organizaTreino = new QVBoxLayout;
 	organizaTreino->setAlignment(Qt::AlignHCenter);
 	menuTreinar->setLayout(organizaTreino);
+
 	QHBoxLayout *organizaCaminhoT = new QHBoxLayout;
 	organizaTreino->addLayout(organizaCaminhoT);
 	organizaCaminhoT->setContentsMargins(0, 0, 0, 20);

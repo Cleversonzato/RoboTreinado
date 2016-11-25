@@ -7,6 +7,7 @@
 #include <QtWidgets\qlineedit.h>
 #include <QtCore\qstring.h>
 #include <QtWidgets\qlabel.h>
+#include "Controlador.h"
 
 //#include <algorithm>
 
@@ -34,15 +35,16 @@ public:
 	~IU();	
 		
 protected:
-	//widgets
-	QPushButton* IU::botao(QString nomeBotao);
+	//inicializa widgets
+	QWidget *iniciaMenu();
+	QPushButton* botao(QString nomeBotao);
 	QRadioButton* botaoSelecao(QString nomeBotao);
 	QLabel* imagem(QString localDaImagem);
 	QLineEdit* diretorio();
-	//layout
+	// ajusta o layout
 	QHBoxLayout naHorizontal(QWidget* torto, QHBoxLayout* alinhamento);
 	QVBoxLayout naVertical(QWidget* torto, QVBoxLayout* alinhamento);
-
+	
 	/*QWidget* menuAtual =0; //janela de menu
 	QRadioButton *selecao1 =0;
 	QRadioButton *selecao2 =0;
