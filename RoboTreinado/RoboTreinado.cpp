@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 {
 	
 	QApplication treinamento(argc, argv);
+
 	MenuInicial *comece = new MenuInicial;
 
 	return treinamento.exec();

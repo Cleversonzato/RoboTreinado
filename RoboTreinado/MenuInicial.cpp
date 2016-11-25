@@ -4,6 +4,7 @@
 
 MenuInicial::MenuInicial()
 {
+	Controlador::janelaPrincipal->show;
 }
 
 

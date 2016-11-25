@@ -2,7 +2,8 @@
 #include <QtCore\qobject.h>
 #include <QtWidgets\qwidget.h>
 #include <QtWidgets\QVBoxLayout>
-#include <QtWidgets\qpushbutton.h>
+#include <QtWidgets\qfiledialog.h>
+#include <string>
 
 //Classe mãe para controla o programa orientado a eventos
 class Controlador :	public QWidget
@@ -13,7 +14,8 @@ public:
 	~Controlador();
 
 protected:
-	static void iniciaJanela(QWidget*, QVBoxLayout*); //inicializa a janela principal
+	static QVBoxLayout Controlador::*centraliza; //layout da janela principal no qual serão colocados todos os menus
+	static QWidget* janelaPrincipal; //inicializador da janela principal
 
 protected slots:	
 	
